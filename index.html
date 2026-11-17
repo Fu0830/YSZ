@@ -1,0 +1,1615 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>洋柿子之食用指南</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='24' fill='%23e8443a'/%3E%3Cpath d='M32 14l-6 8 6-3 6 3z' fill='%233f9d55'/%3E%3C/svg%3E" />
+  <style>
+    /* ============ 可切换 UI 配色（主题变量） ============ */
+    :root, [data-theme="tomato"] {
+      --cream: #fff3f1;
+      --cream-2: #ffe1dd;
+      --butter: #ffb3aa;
+      --yolk: #e8443a;
+      --yolk-deep: #b82820;
+      --eggwhite: #fffdfc;
+      --ink: #5a2b27;
+      --ink-soft: #96615c;
+      --line: #f3c2bd;
+      --pink: #ff8f86;
+      --shadow: 0 20px 46px rgba(184, 40, 32, .16);
+      --radius: 34px;
+      --bg-a: rgba(255,179,170,.38);
+      --bg-b: rgba(255,143,134,.28);
+      --bg-c: rgba(255,179,170,.28);
+      --bg-grad: linear-gradient(160deg, #fff7f5 0%, #ffe3df 54%, #fff3f1 100%);
+      --dot: #b82820;
+    }
+    [data-theme="mint"] {
+      --cream: #eef8f1;
+      --cream-2: #d7efdf;
+      --butter: #9ed8b1;
+      --yolk: #2f9e57;
+      --yolk-deep: #1f733c;
+      --eggwhite: #fdfefd;
+      --ink: #24432f;
+      --ink-soft: #5c7d67;
+      --line: #bfe3cb;
+      --pink: #7cc995;
+      --shadow: 0 20px 46px rgba(31, 115, 60, .16);
+      --bg-a: rgba(158,216,177,.38);
+      --bg-b: rgba(124,201,149,.28);
+      --bg-c: rgba(158,216,177,.28);
+      --bg-grad: linear-gradient(160deg, #f4fbf6 0%, #dcf1e3 54%, #eef8f1 100%);
+      --dot: #1f733c;
+    }
+    [data-theme="rose"] {
+      --cream: #fff1f6;
+      --cream-2: #fbdce7;
+      --butter: #f7a6c4;
+      --yolk: #f0568a;
+      --yolk-deep: #bd3064;
+      --eggwhite: #fffdfd;
+      --ink: #53263c;
+      --ink-soft: #8c5c74;
+      --line: #f3c4d6;
+      --pink: #f78db2;
+      --shadow: 0 20px 46px rgba(189, 48, 100, .16);
+      --bg-a: rgba(247,166,196,.38);
+      --bg-b: rgba(247,141,178,.28);
+      --bg-c: rgba(247,166,196,.28);
+      --bg-grad: linear-gradient(160deg, #fff8fa 0%, #fbe2ec 54%, #fff1f6 100%);
+      --dot: #bd3064;
+    }
+    [data-theme="blue"] {
+      --cream: #f0f5fc;
+      --cream-2: #dce8f7;
+      --butter: #a9c8ee;
+      --yolk: #4a90e2;
+      --yolk-deep: #2c63a8;
+      --eggwhite: #fdfeff;
+      --ink: #23364f;
+      --ink-soft: #586f8c;
+      --line: #c2d6ee;
+      --pink: #8fbcec;
+      --shadow: 0 20px 46px rgba(44, 99, 168, .16);
+      --bg-a: rgba(169,200,238,.38);
+      --bg-b: rgba(143,188,236,.28);
+      --bg-c: rgba(169,200,238,.28);
+      --bg-grad: linear-gradient(160deg, #f7fafe 0%, #e2edf9 54%, #f0f5fc 100%);
+      --dot: #2c63a8;
+    }
+    [data-theme="cyan"] {
+      --cream: #eefafb;
+      --cream-2: #d5f2f5;
+      --butter: #93dde6;
+      --yolk: #3fc3d8;
+      --yolk-deep: #1f8b9e;
+      --eggwhite: #fdfefe;
+      --ink: #1f454c;
+      --ink-soft: #557c84;
+      --line: #b9e3e8;
+      --pink: #7ccfe0;
+      --shadow: 0 20px 46px rgba(31, 139, 158, .16);
+      --bg-a: rgba(147,221,230,.38);
+      --bg-b: rgba(124,207,224,.28);
+      --bg-c: rgba(147,221,230,.28);
+      --bg-grad: linear-gradient(160deg, #f6fdfd 0%, #ddf3f6 54%, #eefafb 100%);
+      --dot: #1f8b9e;
+    }
+    [data-theme="night"] {
+      --cream: #23262f;
+      --cream-2: #323643;
+      --butter: #555b6d;
+      --yolk: #8fa3c9;
+      --yolk-deep: #c3d0ea;
+      --eggwhite: #2c2f3a;
+      --ink: #e8eaf1;
+      --ink-soft: #a9aec0;
+      --line: #454a5a;
+      --pink: #7d86a0;
+      --shadow: 0 20px 46px rgba(0, 0, 0, .4);
+      --bg-a: rgba(85,91,109,.35);
+      --bg-b: rgba(125,134,160,.25);
+      --bg-c: rgba(85,91,109,.35);
+      --bg-grad: linear-gradient(160deg, #262933 0%, #1d2029 54%, #23262f 100%);
+      --dot: #8fa3c9;
+    }
+    [data-theme="lavender"] {
+      --cream: #f4f1fb;
+      --cream-2: #e5def5;
+      --butter: #c3b2e8;
+      --yolk: #7a5cc9;
+      --yolk-deep: #56399c;
+      --eggwhite: #fdfcff;
+      --ink: #352a52;
+      --ink-soft: #6b5d8c;
+      --line: #d6cbee;
+      --pink: #b39de6;
+      --shadow: 0 20px 46px rgba(86, 57, 156, .16);
+      --bg-a: rgba(195,178,232,.38);
+      --bg-b: rgba(179,157,230,.28);
+      --bg-c: rgba(195,178,232,.28);
+      --bg-grad: linear-gradient(160deg, #f8f6fd 0%, #e9e2f7 54%, #f4f1fb 100%);
+      --dot: #56399c;
+    }
+    [data-theme="sunset"] {
+      --cream: #fff6ec;
+      --cream-2: #ffe6c9;
+      --butter: #ffc47a;
+      --yolk: #ef8a3d;
+      --yolk-deep: #b85614;
+      --eggwhite: #fffdf9;
+      --ink: #57351f;
+      --ink-soft: #8c674a;
+      --line: #f5d3a8;
+      --pink: #ffa066;
+      --shadow: 0 20px 46px rgba(184, 86, 20, .16);
+      --bg-a: rgba(255,196,122,.38);
+      --bg-b: rgba(255,160,102,.28);
+      --bg-c: rgba(255,196,122,.28);
+      --bg-grad: linear-gradient(160deg, #fff9f1 0%, #ffe9cf 54%, #fff6ec 100%);
+      --dot: #b85614;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, var(--bg-a) 0 90px, transparent 91px),
+        radial-gradient(circle at 86% 24%, var(--bg-b) 0 70px, transparent 71px),
+        radial-gradient(circle at 24% 88%, var(--bg-c) 0 110px, transparent 111px),
+        var(--bg-grad);
+      overflow: hidden;
+      transition: background .4s ease, color .4s ease;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+    }
+
+    .bg-ring {
+      position: fixed;
+      border: 1px solid color-mix(in srgb, var(--yolk) 22%, transparent);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .ring-1 { width: 220px; height: 220px; left: -80px; top: 80px; }
+    .ring-2 { width: 160px; height: 160px; right: -54px; bottom: 110px; }
+    .ring-3 { width: 90px; height: 90px; right: 34px; top: 64px; }
+
+    /* 背景番茄叶装饰 */
+    .bg-leaf {
+      position: fixed;
+      width: 46px;
+      height: 30px;
+      background: var(--leaf-decor, #3f9d55);
+      opacity: .12;
+      border-radius: 0 80% 0 80%;
+      pointer-events: none;
+    }
+    .bg-leaf.l1 { left: 22px; bottom: 90px; transform: rotate(-30deg); }
+    .bg-leaf.l2 { right: 30px; top: 120px; transform: rotate(150deg); }
+    .bg-leaf.l3 { left: 30px; top: 150px; transform: rotate(40deg); width: 34px; height: 22px; }
+
+    /* ============ 开屏：案板切西红柿交互 ============ */
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      transition: opacity .55s ease, visibility .55s ease;
+    }
+    #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+    .splash-inner { text-align: center; }
+
+    .board-scene {
+      position: relative;
+      width: min(320px, 80vw);
+      height: min(230px, 58vw);
+      margin: 0 auto 24px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* 木案板 */
+    .cut-board {
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      bottom: 10%;
+      height: 60%;
+      border-radius: 26px;
+      background: linear-gradient(180deg, #e9c79a, #d8a96f);
+      box-shadow: inset 0 -12px 20px rgba(120, 72, 24, .22), 0 12px 26px rgba(120, 72, 24, .18);
+      overflow: hidden;
+    }
+    .cut-board::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, rgba(120,72,24,.10) 0 2px, transparent 2px 26px);
+    }
+    /* 案板上的汁水洼，让两半番茄有落脚感 */
+    .board-juice {
+      position: absolute;
+      left: 50%;
+      bottom: 18%;
+      width: 150px;
+      height: 34px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(232,68,58,.22), transparent 70%);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .board.sliced .board-juice { opacity: 1; }
+    /* 整颗番茄（固定番茄红，不随主题变色） */
+    .tomato-whole {
+      position: absolute;
+      left: 50%;
+      bottom: 24%;
+      width: 88px;
+      height: 82px;
+      transform: translateX(-50%);
+      transition: opacity .18s ease;
+      z-index: 3;
+    }
+    .tomato-whole .fruit {
+      position: absolute;
+      inset: 0;
+      border-radius: 50% 50% 48% 48% / 56% 56% 44% 44%;
+      background: radial-gradient(circle at 34% 28%, #ff8a80, #e8443a 62%, #b82820);
+      box-shadow: inset 0 -8px 14px rgba(120, 20, 14, .25), 0 8px 18px rgba(120, 20, 14, .18);
+    }
+    .tomato-whole .leaf {
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      width: 34px;
+      height: 18px;
+      transform: translateX(-50%);
+      background: #3f9d55;
+      clip-path: polygon(50% 0, 62% 45%, 100% 35%, 72% 70%, 82% 100%, 50% 80%, 18% 100%, 28% 70%, 0 35%, 38% 45%);
+    }
+    /* 刀落下瞬间整颗隐去，由两半接替 */
+    .board.sliced .tomato-whole { opacity: 0; }
+
+    /* 切下的两半番茄：初始与整颗重合，刀穿过刀口后沿中线自然分开落案板 */
+    .tomato-half {
+      position: absolute;
+      left: 50%;
+      bottom: 24%;
+      width: 44px;
+      height: 82px;
+      opacity: 0;
+      z-index: 3;
+      transform: translateX(-50%);
+      overflow: hidden;
+    }
+    .tomato-half.left { margin-left: -44px; }
+    .tomato-half.right { margin-left: 0; }
+    .tomato-half .half-fruit {
+      position: absolute;
+      top: 0;
+      width: 88px;
+      height: 82px;
+      border-radius: 50% 50% 48% 48% / 56% 56% 44% 44%;
+      background: radial-gradient(circle at 34% 28%, #ff8a80, #e8443a 62%, #b82820);
+      box-shadow: inset 0 -8px 14px rgba(120, 20, 14, .25), 0 8px 18px rgba(120, 20, 14, .18);
+    }
+    .tomato-half.left .half-fruit { left: 0; border-radius: 50% 0 0 48% / 56% 0 0 44%; }
+    .tomato-half.right .half-fruit { right: 0; border-radius: 0 50% 48% 0 / 0 56% 44% 0; }
+    /* 切面果肉（贴刀口一侧） */
+    .tomato-half .cut-face {
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      width: 14px;
+      border-radius: 8px;
+      background: radial-gradient(ellipse at center, #ffd7d2, #ffb3aa 75%);
+    }
+    .tomato-half.left .cut-face { right: 0; }
+    .tomato-half.right .cut-face { left: 0; }
+    /* 番茄籽贴在切面上 */
+    .tomato-half .seed {
+      position: absolute;
+      width: 6px;
+      height: 9px;
+      border-radius: 50%;
+      background: #fff1d6;
+      box-shadow: 0 0 0 1px rgba(184,40,32,.12);
+    }
+    .tomato-half.left .seed.s1 { right: 3px; top: 26%; transform: rotate(-20deg); }
+    .tomato-half.left .seed.s2 { right: 5px; bottom: 22%; }
+    .tomato-half.right .seed.s1 { left: 3px; top: 26%; transform: rotate(20deg); }
+    .tomato-half.right .seed.s2 { left: 5px; bottom: 22%; }
+
+    /* 刀落切分：两半先竖直下沉落案板，再沿刀口小幅度滑开，无弹性回弹 */
+    .board.sliced .tomato-half {
+      animation: splitFall .5s cubic-bezier(.22,.61,.36,1) forwards;
+    }
+    .board.sliced .tomato-half.left { animation-name: splitLeft; }
+    .board.sliced .tomato-half.right { animation-name: splitRight; }
+    @keyframes splitLeft {
+      0%   { opacity: 1; transform: translateX(-50%) translateY(0) rotate(0); }
+      55%  { opacity: 1; transform: translateX(-50%) translateY(6px) rotate(0); }
+      100% { opacity: 1; transform: translateX(-104px) translateY(8px) rotate(-9deg); }
+    }
+    @keyframes splitRight {
+      0%   { opacity: 1; transform: translateX(-50%) translateY(0) rotate(0); }
+      55%  { opacity: 1; transform: translateX(-50%) translateY(6px) rotate(0); }
+      100% { opacity: 1; transform: translateX(16px) translateY(8px) rotate(8deg); }
+    }
+
+    /* 菜刀：标准中式厨刀，斜握，刀刃朝番茄中线落下 */
+    .knife {
+      position: absolute;
+      left: 50%;
+      top: -22%;
+      width: 128px;
+      height: 64px;
+      transform: translateX(-50%) rotate(24deg);
+      transform-origin: 30% 70%;
+      transition: transform .25s ease;
+      z-index: 4;
+    }
+    .knife .blade {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 100px;
+      height: 34px;
+      background: linear-gradient(180deg, #eef1f4 0%, #c3ccd4 55%, #aab4be 100%);
+      border-radius: 4px 16px 14px 4px;
+      clip-path: polygon(0 22%, 100% 0, 100% 100%, 0 78%);
+      box-shadow: 0 4px 10px rgba(60,70,80,.25), inset 0 1px 2px rgba(255,255,255,.7);
+    }
+    /* 刀刃高光线 */
+    .knife .blade::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      right: 6px;
+      bottom: 3px;
+      height: 2px;
+      background: rgba(255,255,255,.55);
+      border-radius: 2px;
+    }
+    .knife .handle {
+      position: absolute;
+      right: 0;
+      top: 16px;
+      width: 34px;
+      height: 20px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #7a5138, #5a3826);
+      box-shadow: inset 0 1px 2px rgba(255,255,255,.18);
+    }
+    /* 起刀轻抬两下，第三刀斜向下压切到番茄 */
+    .board.started .knife { animation: chop .46s cubic-bezier(.36,.02,.58,1) 3; }
+    .board.sliced .knife { transform: translateX(-50%) rotate(24deg) translateY(34px); }
+
+    /* 汁水 / 溅出的果肉 */
+    .juice {
+      position: absolute;
+      left: 50%;
+      bottom: 30%;
+      width: 10px;
+      height: 10px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .juice::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50% 50% 40% 60%;
+      background: var(--pink);
+    }
+    .board.sliced .juice { animation: juicePop .7s ease-out forwards; }
+    .board.sliced .juice:nth-child(1) { transform: translate(-80px, -6px) rotate(-16deg); }
+    .board.sliced .juice:nth-child(2) { transform: translate(64px, -12px) rotate(14deg); animation-delay: .06s; }
+    .board.sliced .juice:nth-child(3) { transform: translate(30px, 8px) rotate(-8deg); animation-delay: .12s; }
+    .board.sliced .juice:nth-child(4) { transform: translate(-46px, 10px) rotate(10deg); animation-delay: .18s; }
+
+    .tap-hint {
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      transform: translateX(-50%);
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 253, 252, .92);
+      color: var(--ink-soft);
+      font-size: 13px;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(120, 20, 14, .14);
+      z-index: 5;
+    }
+    .board-scene { padding-bottom: 24px; }
+    .splash-title {
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--ink);
+    }
+    .splash-sub {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      letter-spacing: .12em;
+    }
+
+    @keyframes chop {
+      0%   { transform: translateX(-50%) rotate(24deg) translateY(0); }
+      35%  { transform: translateX(-50%) rotate(24deg) translateY(34px); }
+      60%  { transform: translateX(-50%) rotate(24deg) translateY(4px); }
+      100% { transform: translateX(-50%) rotate(24deg) translateY(0); }
+    }
+    @keyframes juicePop {
+      0% { opacity: 0; transform: translate(-50%,-50%) scale(.4); }
+      35% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%,-80%) scale(1.15); }
+    }
+
+    /* ============ 主卡片 ============ */
+    .stage {
+      position: relative;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+    .deck {
+      width: min(430px, 100%);
+      height: min(760px, calc(100vh - 36px));
+      position: relative;
+    }
+    .card {
+      position: absolute;
+      inset: 0;
+      padding: 26px 24px 120px;
+      border-radius: var(--radius);
+      background: rgba(255, 253, 252, .92);
+      box-shadow: var(--shadow);
+      border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      opacity: 0;
+      transform: translateY(24px) scale(.98);
+      pointer-events: none;
+      transition: opacity .34s ease, transform .34s ease;
+      scrollbar-width: thin;
+      scrollbar-color: var(--butter) transparent;
+    }
+    /* 卡片顶部番茄蒂装饰条 */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 4px;
+      border-radius: 0 0 8px 8px;
+      background: linear-gradient(90deg, var(--yolk), var(--butter), var(--yolk));
+      opacity: .55;
+    }
+    .card.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--ink-soft);
+      font-size: 13px;
+      letter-spacing: .18em;
+    }
+    .card-top .dot {
+      display: inline-flex;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--cream-2);
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      color: var(--yolk);
+    }
+    .card-top .dot::before {
+      content: "";
+      width: 8px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--yolk);
+    }
+    .card-top .dot { font-size: 0; }
+    .card-content { min-height: 100%; }
+    .card-bottom {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 74px;
+      display: flex;
+      justify-content: space-between;
+      color: color-mix(in srgb, var(--ink-soft) 70%, #fff);
+      font-size: 12px;
+      letter-spacing: .14em;
+      pointer-events: none;
+    }
+
+    .hero { text-align: center; margin-top: 54px; }
+    .avatar {
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 28%, #ff8a80, #e8443a 62%, #b82820);
+      border: 7px solid var(--cream);
+      box-shadow: 0 10px 28px rgba(120, 20, 14, .22);
+      display: grid;
+      place-items: center;
+      font-size: 58px;
+      color: #fff;
+      position: relative;
+    }
+    .avatar::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -9px;
+      width: 38px;
+      height: 20px;
+      transform: translateX(-50%);
+      background: #3f9d55;
+      clip-path: polygon(50% 0, 62% 45%, 100% 35%, 72% 70%, 82% 100%, 50% 80%, 18% 100%, 28% 70%, 0 35%, 38% 45%);
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 8vw, 36px);
+      letter-spacing: .08em;
+    }
+    .hero .hello {
+      margin: 0 auto;
+      max-width: 310px;
+      line-height: 1.9;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .tag {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--cream-2);
+      color: var(--ink);
+      font-size: 13px;
+      border: 1px solid var(--line);
+    }
+
+    h2.section-title {
+      margin: 18px 0 8px;
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: .12em;
+    }
+    .section-kicker {
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 12px;
+      letter-spacing: .28em;
+      margin-bottom: 24px;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0;
+      color: var(--yolk);
+    }
+    .divider::before, .divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+    /* 番茄小籽装饰点 */
+    .seed-dot {
+      display: inline-block;
+      width: 7px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yolk);
+      opacity: .5;
+      vertical-align: middle;
+    }
+
+    .info-list { display: grid; gap: 14px; }
+    .info-row {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 26px;
+      background: var(--eggwhite);
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 14px rgba(120, 20, 14, .07);
+      border-left: 3px solid var(--yolk);
+    }
+    .info-row .label {
+      color: var(--yolk);
+      font-size: 13px;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+    .info-row .value { line-height: 1.75; font-size: 14px; }
+
+    .notice {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 26px;
+      background: var(--cream-2);
+      color: var(--ink-soft);
+      line-height: 1.8;
+      font-size: 14px;
+      box-shadow: 0 6px 14px rgba(120, 20, 14, .07);
+    }
+
+    .habit-grid { display: grid; gap: 14px; }
+    .habit {
+      padding: 17px;
+      border-radius: 28px;
+      background: var(--eggwhite);
+      border: 1px solid var(--line);
+      line-height: 1.75;
+      font-size: 14px;
+      box-shadow: 0 6px 14px rgba(120, 20, 14, .07);
+      border-left: 3px solid var(--yolk);
+    }
+    .habit strong { display: block; margin-bottom: 6px; color: var(--ink); }
+
+    .benefit-list { display: grid; gap: 13px; }
+    .benefit {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 12px;
+      padding: 15px 16px;
+      border-radius: 26px;
+      background: var(--eggwhite);
+      border: 1px solid var(--line);
+      align-items: center;
+      box-shadow: 0 6px 14px rgba(120, 20, 14, .07);
+    }
+    .benefit .need {
+      color: var(--yolk);
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .benefit .give { line-height: 1.7; font-size: 14px; }
+    .benefit-bubble {
+      position: relative;
+      margin: 4px 6px 0;
+      padding: 13px 16px;
+      border-radius: 26px 26px 26px 10px;
+      background: var(--cream-2);
+      border: 1.5px dashed var(--yolk);
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .benefit-bubble::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: -7px;
+      width: 14px;
+      height: 14px;
+      background: var(--cream-2);
+      border-left: 1px dashed var(--yolk);
+      border-top: 1px dashed var(--yolk);
+      transform: rotate(45deg);
+    }
+    .bonus-note {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 26px;
+      background: var(--cream-2);
+      line-height: 1.8;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .end-card { text-align: center; display: flex; flex-direction: column; justify-content: center; }
+    .end-tomato {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 28%, #ff8a80, #e8443a 62%, #b82820);
+      position: relative;
+      box-shadow: 0 10px 28px rgba(120, 20, 14, .18);
+    }
+    .end-tomato::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: -8px;
+      width: 34px; height: 18px;
+      transform: translateX(-50%);
+      background: #3f9d55;
+      clip-path: polygon(50% 0, 62% 45%, 100% 35%, 72% 70%, 82% 100%, 50% 80%, 18% 100%, 28% 70%, 0 35%, 38% 45%);
+    }
+    .end-card p {
+      line-height: 2;
+      color: var(--ink-soft);
+      font-size: 15px;
+      margin: 0 0 18px;
+    }
+    .end-card .blessing {
+      font-size: 20px;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .album-flow {
+      display: grid;
+      gap: 18px;
+      margin: 10px 0 16px;
+    }
+    .album-group {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--eggwhite);
+      box-shadow: 0 10px 22px rgba(120, 20, 14, .12);
+      padding: 14px 14px 16px;
+    }
+    .album-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .album-group-title {
+      font-size: 17px;
+      letter-spacing: .08em;
+      margin: 0;
+    }
+    .album-group-count {
+      flex: 0 0 auto;
+      min-width: 36px;
+      height: 32px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--cream-2);
+      color: var(--yolk-deep);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .album-group-photos {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .album-group-photos img {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(120, 20, 14, .14);
+      object-fit: contain;
+      background: var(--cream-2);
+      cursor: zoom-in;
+    }
+    .photo-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(60, 20, 18, .72);
+      backdrop-filter: blur(8px);
+    }
+    .photo-lightbox.open { display: flex; }
+    .lightbox-card {
+      position: relative;
+      max-width: min(92vw, 430px);
+      max-height: 86vh;
+      border-radius: 28px;
+      background: var(--eggwhite);
+      padding: 14px;
+      box-shadow: 0 24px 60px rgba(40, 10, 8, .32);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .lightbox-card img {
+      display: block;
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 18px;
+      margin: 0 auto;
+    }
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 253, 252, .94);
+      color: var(--ink);
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(40, 10, 8, .2);
+    }
+    .lightbox-arrow#lightboxPrev { left: 8px; }
+    .lightbox-arrow#lightboxNext { right: 8px; }
+    .lightbox-caption {
+      font-size: 13px;
+      color: var(--ink-soft);
+      letter-spacing: .06em;
+    }
+    .lightbox-close {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 253, 252, .94);
+      color: var(--ink);
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(40, 10, 8, .2);
+    }
+    .album-title { margin-top: 8px; }
+    .gallery-hint {
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-soft);
+      letter-spacing: .08em;
+    }
+
+    .nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 5;
+    }
+    .nav button {
+      border: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--eggwhite);
+      color: var(--ink);
+      box-shadow: 0 8px 18px rgba(120, 20, 14, .18);
+      font-size: 22px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform .18s cubic-bezier(.34, 1.56, .64, 1), background .18s ease;
+    }
+    .nav button:hover { transform: translateY(-2px) scale(1.06); background: var(--cream-2); }
+    .nav button:active { transform: scale(.94); }
+    .nav button:focus-visible { outline: 2px solid var(--yolk); outline-offset: 3px; }
+    .dots { display: flex; gap: 9px; align-items: center; }
+    .dots button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--yolk) 35%, #fff);
+      box-shadow: none;
+      position: relative;
+      transition: transform .18s ease, background .18s ease;
+    }
+    /* 当前页：小西红柿造型 */
+    .dots button.on {
+      width: 16px;
+      height: 15px;
+      border-radius: 46% 46% 50% 50% / 50% 50% 46% 46%;
+      background: radial-gradient(circle at 34% 28%, #ff8a80, #e8443a 62%, #b82820);
+      box-shadow: 0 2px 4px rgba(120,20,14,.25);
+    }
+    .dots button.on::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -4px;
+      width: 9px;
+      height: 5px;
+      transform: translateX(-50%);
+      background: #3f9d55;
+      clip-path: polygon(50% 0, 62% 45%, 100% 35%, 72% 70%, 82% 100%, 50% 80%, 18% 100%, 28% 70%, 0 35%, 38% 45%);
+    }
+
+    .skip-splash {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink-soft);
+      border-radius: 999px;
+      padding: 10px 18px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(120, 20, 14, .1);
+      transition: transform .18s cubic-bezier(.34, 1.56, .64, 1);
+    }
+    .skip-splash:hover { transform: translateY(-2px); }
+    .skip-splash:active { transform: scale(.95); }
+
+    /* 配色切换器：色板 + 彩虹渐变滑杆 */
+    .theme-panel {
+      position: fixed;
+      left: 16px;
+      bottom: 18px;
+      z-index: 55;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 252, .94);
+      box-shadow: 0 8px 18px rgba(120, 20, 14, .16);
+      max-width: calc(100vw - 32px);
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+    }
+    .theme-panel.collapsed {
+      transform: translateY(120%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    /* 唤起配色工具栏的悬浮按钮 */
+    .theme-fab {
+      position: fixed;
+      left: 16px;
+      bottom: 18px;
+      z-index: 55;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 253, 252, .94);
+      box-shadow: 0 8px 18px rgba(120, 20, 14, .16);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform .18s ease, opacity .3s ease;
+    }
+    .theme-fab:hover { transform: translateY(-2px) scale(1.05); }
+    .theme-fab:active { transform: scale(.94); }
+    .theme-fab.closed { opacity: 0; pointer-events: none; transform: translateY(120%); }
+    .theme-fab .fab-dots {
+      display: grid;
+      grid-template-columns: repeat(3, 7px);
+      gap: 4px;
+    }
+    .theme-fab .fab-dots i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: block;
+    }
+    .theme-fab .fab-dots i:nth-child(1) { background: #4a90e2; }
+    .theme-fab .fab-dots i:nth-child(2) { background: #f0568a; }
+    .theme-fab .fab-dots i:nth-child(3) { background: #2f9e57; }
+    .theme-fab .fab-dots i:nth-child(4) { background: #7a5cc9; }
+    .theme-fab .fab-dots i:nth-child(5) { background: #ef8a3d; }
+    .theme-fab .fab-dots i:nth-child(6) { background: #3fc3d8; }
+    .theme-panel .theme-label {
+      font-size: 12px;
+      color: var(--ink-soft);
+      letter-spacing: .08em;
+      margin-right: 2px;
+    }
+    .swatches {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+    .theme-panel .swatch {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px var(--line), 0 2px 5px rgba(0,0,0,.12);
+      cursor: pointer;
+      padding: 0;
+      transition: transform .15s ease;
+      position: relative;
+    }
+    .theme-panel .swatch:hover { transform: scale(1.12); }
+    .theme-panel .swatch.on::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px solid var(--yolk);
+    }
+    .swatch[data-theme="tomato"]   { background: #4a90e2; }
+    .swatch[data-theme="rose"]     { background: #f0568a; }
+    .swatch[data-theme="mint"]     { background: #2f9e57; }
+    .swatch[data-theme="lavender"] { background: #7a5cc9; }
+    .swatch[data-theme="sunset"]   { background: #ef8a3d; }
+    .swatch[data-theme="cyan"]      { background: #3fc3d8; }
+
+    /* 彩虹渐变滑杆 */
+    .hue-slider {
+      position: relative;
+      flex: 1 1 120px;
+      min-width: 90px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(90deg,
+        #f04b3a 0%, #ff8a3d 16%, #ffd93d 32%,
+        #3fbf5a 48%, #3fa8d8 64%, #5a63d8 80%,
+        #d84fb0 100%);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,.15), 0 2px 6px rgba(0,0,0,.1);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .hue-slider .hue-thumb {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid #f5d76e;
+      box-shadow: 0 2px 6px rgba(0,0,0,.25);
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .theme-night {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink-soft);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform .15s ease;
+    }
+    .theme-night:hover { transform: translateY(-1px); }
+    .theme-night.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .bgm-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 18px;
+      z-index: 55;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 253, 252, .92);
+      color: var(--yolk-deep);
+      box-shadow: 0 8px 18px rgba(120, 20, 14, .16);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+      line-height: 1;
+    }
+    .bgm-toggle[aria-pressed="false"] { opacity: .76; }
+    .bgm-toggle:hover { transform: translateY(-1px); }
+    .bgm-toggle:active { transform: scale(.95); }
+
+    @media (max-width: 380px) {
+      .card { padding: 22px 18px 76px; }
+      .info-row, .benefit { grid-template-columns: 1fr; gap: 8px; }
+      .card-bottom { left: 18px; right: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body data-theme="tomato">
+  <div class="bg-ring ring-1" aria-hidden="true"></div>
+  <div class="bg-ring ring-2" aria-hidden="true"></div>
+  <div class="bg-ring ring-3" aria-hidden="true"></div>
+  <div class="bg-leaf l1" aria-hidden="true"></div>
+  <div class="bg-leaf l2" aria-hidden="true"></div>
+  <div class="bg-leaf l3" aria-hidden="true"></div>
+
+  <!-- 开屏：案板切西红柿 -->
+  <div id="splash" aria-label="开屏动画">
+    <div class="splash-inner">
+      <div class="board-scene board" id="board" role="button" tabindex="0" aria-label="轻触切西红柿">
+        <div class="cut-board"></div>
+        <div class="board-juice"></div>
+        <div class="tomato-half left">
+          <div class="half-fruit">
+            <div class="cut-face"></div>
+            <span class="seed s1"></span><span class="seed s2"></span>
+          </div>
+        </div>
+        <div class="tomato-half right">
+          <div class="half-fruit">
+            <div class="cut-face"></div>
+            <span class="seed s1"></span><span class="seed s2"></span>
+          </div>
+        </div>
+        <div class="tomato-whole"><div class="leaf"></div><div class="fruit"></div></div>
+        <div class="knife"><div class="blade"></div><div class="handle"></div></div>
+        <div class="juice"></div><div class="juice"></div><div class="juice"></div><div class="juice"></div>
+        <div class="tap-hint">轻触案板，切一颗西红柿</div>
+      </div>
+      <div class="splash-title">洋柿子之食用指南</div>
+      <div class="splash-sub">正在案板上把一颗洋柿子切好</div>
+      <button class="skip-splash" id="skipSplash">跳过动画</button>
+    </div>
+  </div>
+
+  <main class="stage" aria-label="洋柿子自我介绍卡片">
+    <section class="deck" id="deck">
+      <!-- 01 封面 -->
+      <article class="card active" data-index="0">
+        <div class="card-top"><span><span class="dot">✦</span>NAME · 洋柿子</span><span>01 / 09</span></div>
+        <div class="card-content hero">
+          <div class="avatar" aria-hidden="true"></div>
+          <h1>洋柿子</h1>
+          <p class="hello">宝宝好呀，这里是洋柿子喔，很开心能遇见宝宝，接下来让我们了解一下西红柿。</p>
+          <div class="tags">
+            <span class="tag">20岁</span>
+            <span class="tag">大二在读</span>
+            <span class="tag">ENTJ</span>
+            <span class="tag">洋柿子 / 西红柿</span>
+          </div>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · GUIDE</span><span>HELLO</span></div>
+      </article>
+
+      <!-- 02 关于洋柿子 -->
+      <article class="card" data-index="1">
+        <div class="card-top"><span><span class="dot">✦</span>PROFILE · 介绍</span><span>02 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title">关于洋柿子</h2>
+          <div class="section-kicker">A LITTLE ABOUT ME</div>
+          <div class="info-list">
+            <div class="info-row"><div class="label">身份</div><div class="value">20岁，大二在读，ENTJ。</div></div>
+            <div class="info-row"><div class="label">性格</div><div class="value">淡淡的，心态好，比较护短，有独立处理事情的能力，有时抽象派。</div></div>
+            <div class="info-row"><div class="label">状态</div><div class="value">双商在线，不杀熟，不 i 陪，不催单暗示消费；虽然有时有些健忘，但是永远把小宝放在第一位。</div></div>
+            <div class="info-row"><div class="label">称呼</div><div class="value">可以称呼洋柿子或西红柿嘟，活动会第一时间发给宝宝，会经常掉落美味小卡福利。</div></div>
+          </div>
+          <div class="notice">工地：月神幻曲</div>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · PROFILE</span><span>02</span></div>
+      </article>
+
+      <!-- 03 在线时间 -->
+      <article class="card" data-index="2">
+        <div class="card-top"><span><span class="dot">✦</span>TIME · 在线</span><span>03 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title">在线时间</h2>
+          <div class="section-kicker">WHEN TO FIND ME</div>
+          <div class="info-list">
+            <div class="info-row"><div class="label">工作日</div><div class="value">7:00 — 2:00</div></div>
+            <div class="info-row"><div class="label">休息日</div><div class="value">24h 高强度在线。</div></div>
+          </div>
+          <div class="notice">
+            有时上课忙可能会晚回，但看见消息会第一时间回复宝宝嘟。
+          </div>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · ONLINE</span><span>03</span></div>
+      </article>
+
+      <!-- 04 相处方式 -->
+      <article class="card" data-index="3">
+        <div class="card-top"><span><span class="dot">✦</span>STYLE · 相处</span><span>04 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title">相处方式</h2>
+          <div class="section-kicker">HOW WE GET ALONG</div>
+          <div class="habit-grid">
+            <div class="habit"><strong>记住雷点与喜点</strong>会认真记住宝宝的雷点与喜点，不会让任何人踩到宝宝的雷点。</div>
+            <div class="habit"><strong>分寸感</strong>不喜欢被打扰的宝宝，洋柿子一般只有新活动才会去打扰一下。</div>
+            <div class="habit"><strong>热情直属</strong>喜欢热情直属嘟，洋柿子将会把宝宝当成好朋友，天天分享日常生活。</div>
+            <div class="habit"><strong>生日专属</strong>宝宝的生日会有洋柿子的专属约卡月排面，还有群冠小礼物、小红包（小礼物可能会是金银首饰喔）。</div>
+            <div class="habit"><strong>记得告诉我生日</strong>没有特别标注生日的宝宝，还请宝宝单独告诉洋柿子生日喔，我们不用害羞，这是我们应得嘟。</div>
+          </div>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · HABITS</span><span>04</span></div>
+      </article>
+
+      <!-- 05 直属福利 -->
+      <article class="card" data-index="4">
+        <div class="card-top"><span><span class="dot">✦</span>BENEFIT · 福利</span><span>05 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title">直属福利</h2>
+          <div class="section-kicker">TOMATO BENEFITS</div>
+          <div class="benefit-list">
+            <div class="benefit"><div class="need">预存 188</div><div class="give">返 10r</div></div>
+            <div class="benefit"><div class="need">预存 288</div><div class="give">返 13r</div></div>
+            <div class="benefit"><div class="need">预存 388</div><div class="give">返 25r</div></div>
+            <div class="benefit"><div class="need">预存 666</div><div class="give">返 35r</div></div>
+            <div class="benefit"><div class="need">预存 1314</div><div class="give">返 50r</div></div>
+          </div>
+          <div class="benefit-bubble">以上为例，每多一千返额加 20。团内福利和直属福利可叠加。</div>
+          <div class="bonus-note">
+            累充从 3888 开始返利喔。
+          </div>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · BENEFITS</span><span>05</span></div>
+      </article>
+
+      <!-- 06 这样做的原因 -->
+      <article class="card" data-index="5">
+        <div class="card-top"><span><span class="dot">✦</span>HEART · 心意</span><span>06 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title">这样做的原因</h2>
+          <div class="section-kicker">A SMALL PROMISE</div>
+          <div class="habit-grid">
+            <div class="habit">
+              <strong>每个小女孩都值得被善待</strong>
+              洋柿子觉得明面上的礼物，能让宝宝更好地感受到心意。
+            </div>
+            <div class="habit">
+              <strong>更喜欢朋友式相处</strong>
+              洋柿子喜欢交朋友，比起板派关系，洋柿子更希望我们是以朋友关系相处。
+            </div>
+          </div>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · HEART</span><span>06</span></div>
+      </article>
+
+      <!-- 07 相处模式 -->
+      <article class="card" data-index="6">
+        <div class="card-top"><span><span class="dot">✦</span>MODE · 相处模式</span><span>07 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title">相处模式</h2>
+          <div class="section-kicker">HOW WE GET ALONG</div>
+          <div class="habit-grid">
+            <div class="habit">
+              <strong>分享有趣日常</strong>
+              喜欢和宝宝讲一些有趣的事情，分享好听的声音配音，说到的事情一定会做到。
+            </div>
+          </div>
+          <div class="divider" aria-hidden="true"><span class="seed-dot"></span></div>
+          <p class="notice">世上最奢侈的礼物，是一颗不设防的心遇见另一颗坦诚的心。</p>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · MODE</span><span>07</span></div>
+      </article>
+
+      <!-- 08 相册（结束页之前） -->
+      <article class="card" data-index="7">
+        <div class="card-top"><span><span class="dot">✦</span>ALBUM · 相册</span><span>08 / 09</span></div>
+        <div class="card-content">
+          <h2 class="section-title album-title">精选相册</h2>
+          <div class="section-kicker">SCROLL THE TOMATO ALBUM</div>
+          <div class="album-flow" aria-label="相册图片纵向浏览">
+            <section class="album-group" aria-label="添加好友相册">
+              <header class="album-group-head"><h3 class="album-group-title">扫码加好友</h3><span class="album-group-count">1 张</span></header>
+              <div class="album-group-photos">
+                <img src="assets/p1-qr.jpg" alt="微信扫码添加洋柿子" loading="lazy" decoding="async" />
+              </div>
+            </section>
+            <section class="album-group" aria-label="日常聊天相册">
+              <header class="album-group-head"><h3 class="album-group-title">日常互动</h3><span class="album-group-count">1 张</span></header>
+              <div class="album-group-photos">
+                <img src="assets/p2-chat.jpg" alt="日常聊天记录截图" loading="lazy" decoding="async" />
+              </div>
+            </section>
+            <section class="album-group" aria-label="群内排面相册">
+              <header class="album-group-head"><h3 class="album-group-title">群内排面</h3><span class="album-group-count">3 张</span></header>
+              <div class="album-group-photos">
+                <img src="assets/p3-msg1.jpg" alt="群内走心小作文截图" loading="lazy" decoding="async" />
+                <img src="assets/p4-msg2.jpg" alt="群内充值排面截图" loading="lazy" decoding="async" />
+                <img src="assets/p5-msg3.jpg" alt="群内预存福利截图" loading="lazy" decoding="async" />
+              </div>
+            </section>
+          </div>
+          <p class="gallery-hint">点击图片可放大查看</p>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · ALBUM</span><span>08</span></div>
+      </article>
+
+      <!-- 09 结尾 -->
+      <article class="card end-card" data-index="8">
+        <div class="card-top"><span><span class="dot">✦</span>END · 结尾</span><span>09 / 09</span></div>
+        <div class="card-content">
+          <div class="end-tomato" aria-hidden="true"></div>
+          <p class="blessing">谢谢这么可爱的你<br />看完洋柿子的碎碎念</p>
+          <p>期待与宝宝开启美好的专属时光。</p>
+          <p>世上最奢侈的礼物，是一颗不设防的心遇见另一颗坦诚的心。</p>
+        </div>
+        <div class="card-bottom"><span>YANGSHIZI · FIN</span><span>END</span></div>
+      </article>
+
+      <nav class="nav" aria-label="卡片翻页">
+        <button type="button" id="prev" aria-label="上一张">‹</button>
+        <div class="dots" id="dots"></div>
+        <button type="button" id="next" aria-label="下一张">›</button>
+      </nav>
+    </section>
+  </main>
+
+  <!-- 配色切换 -->
+  <button type="button" class="theme-fab closed" id="themeFab" aria-label="打开配色工具栏">
+    <span class="fab-dots"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  </button>
+  <div class="theme-panel" role="group" aria-label="切换界面配色">
+    <div class="swatches">
+      <button type="button" class="swatch" data-theme="blue" aria-label="蓝色配色"></button>
+      <button type="button" class="swatch" data-theme="rose" aria-label="玫粉配色"></button>
+      <button type="button" class="swatch" data-theme="mint" aria-label="薄荷绿配色"></button>
+      <button type="button" class="swatch" data-theme="lavender" aria-label="薰衣草紫配色"></button>
+      <button type="button" class="swatch" data-theme="sunset" aria-label="落日橙配色"></button>
+      <button type="button" class="swatch" data-theme="cyan" aria-label="青蓝配色"></button>
+    </div>
+    <div class="hue-slider" id="hueSlider" role="slider" aria-label="彩虹渐变选色" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <div class="hue-thumb" id="hueThumb"></div>
+    </div>
+    <button type="button" class="theme-night" id="nightBtn" aria-label="夜间模式">夜间</button>
+  </div>
+
+  <button type="button" class="bgm-toggle" id="bgmToggle" aria-label="背景音乐开关" aria-pressed="true">♪</button>
+  <audio id="bgm" loop preload="none" aria-label="背景音乐"></audio>
+
+  <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+    <div class="lightbox-card">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="关闭大图">×</button>
+      <button type="button" class="lightbox-arrow" id="lightboxPrev" aria-label="上一张大图">‹</button>
+      <img id="lightboxImage" src="" alt="相册大图" />
+      <button type="button" class="lightbox-arrow" id="lightboxNext" aria-label="下一张大图">›</button>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ============ 卡片翻页 ============ */
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const dotsWrap = document.getElementById('dots');
+    let current = 0;
+
+    cards.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', `跳转到第 ${i + 1} 张`);
+      b.addEventListener('click', () => show(i));
+      dotsWrap.appendChild(b);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function show(index) {
+      current = Math.max(0, Math.min(cards.length - 1, index));
+      cards.forEach((card, i) => card.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('on', i === current));
+    }
+    document.getElementById('prev').addEventListener('click', () => show(current - 1));
+    document.getElementById('next').addEventListener('click', () => show(current + 1));
+
+    /* ============ 相册大图 ============ */
+    const albumGroups = Array.from(document.querySelectorAll('.album-group'));
+    const lightbox = document.getElementById('photoLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    let lightboxList = [];
+    let lightboxIndex = 0;
+
+    function openLightbox(panel, target) {
+      lightboxList = Array.from(panel.querySelectorAll('img'));
+      lightboxIndex = lightboxList.indexOf(target);
+      if (lightboxIndex < 0) lightboxIndex = 0;
+      showLightbox();
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function showLightbox() {
+      const img = lightboxList[lightboxIndex];
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightboxCaption.textContent = `${lightboxIndex + 1} / ${lightboxList.length}`;
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', e => {
+      e.stopPropagation();
+      lightboxIndex = (lightboxIndex - 1 + lightboxList.length) % lightboxList.length;
+      showLightbox();
+    });
+    document.getElementById('lightboxNext').addEventListener('click', e => {
+      e.stopPropagation();
+      lightboxIndex = (lightboxIndex + 1) % lightboxList.length;
+      showLightbox();
+    });
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    albumGroups.forEach(group => {
+      group.querySelectorAll('.album-group-photos img').forEach(img => {
+        img.addEventListener('click', e => {
+          e.stopPropagation();
+          openLightbox(group, img);
+        });
+      });
+    });
+
+    /* ============ 滑动 / 键盘翻页 ============ */
+    let touchStartX = 0;
+    document.getElementById('deck').addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+    document.getElementById('deck').addEventListener('touchend', e => {
+      const delta = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 44) show(current + (delta < 0 ? 1 : -1));
+    }, { passive: true });
+
+    document.addEventListener('keydown', e => {
+      if (lightbox.classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+        if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+        return;
+      }
+      if (e.key === 'ArrowRight') show(current + 1);
+      if (e.key === 'ArrowLeft') show(current - 1);
+    });
+
+    /* ============ 配色切换 ============ */
+    const swatches = Array.from(document.querySelectorAll('.swatch'));
+    const nightBtn = document.getElementById('nightBtn');
+    const hueSlider = document.getElementById('hueSlider');
+    const hueThumb = document.getElementById('hueThumb');
+    const themePanel = document.querySelector('.theme-panel');
+    const themeFab = document.getElementById('themeFab');
+
+    function setPanelOpen(open) {
+      themePanel.classList.toggle('collapsed', !open);
+      themeFab.classList.toggle('closed', open);
+    }
+    themeFab.addEventListener('click', () => setPanelOpen(true));
+
+    /* 彩虹滑杆上的取色位置 → 主题（与渐变色带对应） */
+    const HUE_THEMES = [
+      { at: 0,   theme: 'tomato' },
+      { at: 16,  theme: 'sunset' },
+      { at: 32,  theme: 'mint' },
+      { at: 48,  theme: 'cyan' },
+      { at: 64,  theme: 'blue' },
+      { at: 80,  theme: 'lavender' },
+      { at: 100, theme: 'rose' }
+    ];
+    function themeFromHue(pct) {
+      let best = HUE_THEMES[0];
+      let bestDist = 101;
+      HUE_THEMES.forEach(t => {
+        const d = Math.abs(t.at - pct);
+        if (d < bestDist) { bestDist = d; best = t; }
+      });
+      return best.theme;
+    }
+    function hueFromTheme(name) {
+      const hit = HUE_THEMES.find(t => t.theme === name);
+      return hit ? hit.at : 50;
+    }
+
+    function applyTheme(name) {
+      document.body.setAttribute('data-theme', name);
+      swatches.forEach(s => s.classList.toggle('on', s.dataset.theme === name));
+      nightBtn.classList.toggle('on', name === 'night');
+      const pct = name === 'night' ? 50 : hueFromTheme(name);
+      hueThumb.style.left = pct + '%';
+      hueSlider.setAttribute('aria-valuenow', String(Math.round(pct)));
+      try { localStorage.setItem('tomato-theme', name); } catch (err) {}
+    }
+    /* 配色切换：面板内选择后收起，回到悬浮标识 */
+    swatches.forEach(s => s.addEventListener('click', () => { applyTheme(s.dataset.theme); setPanelOpen(false); }));
+    nightBtn.addEventListener('click', () => {
+      applyTheme(document.body.getAttribute('data-theme') === 'night' ? 'tomato' : 'night');
+      setPanelOpen(false);
+    });
+
+    function sliderPick(e) {
+      const rect = hueSlider.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      let pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      hueThumb.style.left = pct + '%';
+      hueSlider.setAttribute('aria-valuenow', String(Math.round(pct)));
+      applyTheme(themeFromHue(pct));
+    }
+    let sliderDragging = false;
+    hueSlider.addEventListener('pointerdown', e => {
+      sliderDragging = true;
+      hueSlider.setPointerCapture(e.pointerId);
+      sliderPick(e);
+    });
+    hueSlider.addEventListener('pointermove', e => { if (sliderDragging) sliderPick(e); });
+    hueSlider.addEventListener('pointerup', () => { sliderDragging = false; setPanelOpen(false); });
+
+    try {
+      const saved = localStorage.getItem('tomato-theme');
+      if (saved) applyTheme(saved);
+    } catch (err) {}
+
+    /* ============ 背景音乐（无音频文件时按钮静默隐藏） ============ */
+    const bgm = document.getElementById('bgm');
+    const bgmToggle = document.getElementById('bgmToggle');
+    let bgmStarted = false;
+    function startBgm() {
+      if (!bgm.src) { bgmToggle.style.display = 'none'; return; }
+      if (bgmStarted) return;
+      bgmStarted = true;
+      bgm.volume = .72;
+      bgm.play().catch(() => { bgmToggle.style.display = 'none'; });
+      refreshBgmButton();
+    }
+    function toggleBgm() {
+      if (bgm.paused) startBgm(); else bgm.pause();
+      refreshBgmButton();
+    }
+    function refreshBgmButton() {
+      const playing = !bgm.paused;
+      bgmToggle.setAttribute('aria-pressed', String(playing));
+      bgmToggle.textContent = playing ? '♪' : '✕';
+    }
+    bgmToggle.addEventListener('click', e => { e.stopPropagation(); toggleBgm(); });
+
+    /* ============ 开屏切番茄交互 ============ */
+    const splash = document.getElementById('splash');
+    function hideSplash() {
+      startBgm();
+      splash.classList.add('hide');
+      // 进入主页后收起配色工具栏，仅留悬浮标识可唤起
+      setPanelOpen(false);
+      setTimeout(() => splash.remove(), 600);
+    }
+    document.getElementById('skipSplash').addEventListener('click', hideSplash);
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const board = document.getElementById('board');
+    let sliced = false;
+    function tapTomato() {
+      startBgm();
+      if (sliced) { hideSplash(); return; }
+      sliced = true;
+      board.classList.add('started');
+      setTimeout(() => board.classList.add('sliced'), reduced ? 60 : 920);
+      board.querySelector('.tap-hint').textContent = '西红柿切好啦，点一下进主页';
+      setTimeout(hideSplash, reduced ? 260 : 2300);
+    }
+    board.addEventListener('click', tapTomato);
+    board.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tapTomato(); }
+    });
+
+    show(0);
+  </script>
+</body>
+</html>
