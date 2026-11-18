@@ -1381,6 +1381,7 @@
 
   <button type="button" class="bgm-toggle" id="bgmToggle" aria-label="背景音乐开关" aria-pressed="true">♪</button>
   <audio id="bgm" loop preload="auto" aria-label="背景音乐">
+    <source src="assets/bgm-light.mp3" type="audio/mpeg" />
     <source src="assets/bgm.mp3" type="audio/mpeg" />
     <source src="assets/bgm.m4a" type="audio/mp4" />
   </audio>
@@ -1565,20 +1566,31 @@
     const bgm = document.getElementById('bgm');
     const bgmToggle = document.getElementById('bgmToggle');
     let bgmStarted = false;
+
+    function playBgm() {
+      bgm.volume = .72;
+      const p = bgm.play();
+      if (p && p.catch) {
+        p.then(refreshBgmButton).catch(() => {
+          // 自动播放被拦：留在暂停态，用户点按钮再播
+          bgmStarted = false;
+          refreshBgmButton();
+        });
+      }
+      refreshBgmButton();
+    }
     function startBgm() {
       if (bgmStarted) return;
       bgmStarted = true;
-      bgm.volume = .72;
-      bgm.currentTime = 0;
-      const p = bgm.play();
-      if (p && p.catch) p.catch(() => {
-        // 自动播放被拦时保留按钮，用户再点一次即可播放
-        refreshBgmButton();
-      });
-      refreshBgmButton();
+      playBgm();
     }
     function toggleBgm() {
-      if (bgm.paused) startBgm(); else bgm.pause();
+      if (bgm.paused) {
+        bgmStarted = true;
+        playBgm();
+      } else {
+        bgm.pause();
+      }
       refreshBgmButton();
     }
     function refreshBgmButton() {
@@ -1587,6 +1599,9 @@
       bgmToggle.textContent = playing ? '♪' : '✕';
     }
     bgmToggle.addEventListener('click', e => { e.stopPropagation(); toggleBgm(); });
+    // 音频加载/出错兜底
+    bgm.addEventListener('canplay', refreshBgmButton);
+    bgm.addEventListener('error', () => { bgmToggle.style.opacity = '.6'; });
 
     /* ============ 开屏切番茄交互 ============ */
     const splash = document.getElementById('splash');
@@ -1602,7 +1617,7 @@
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const board = document.getElementById('board');
     let sliced = false;
-    // 开屏任意一次点击/触摸即作为用户手势，启动循环背景音乐
+    // 开屏任意一次触摸/点击即作为用户手势，启动循环背景音乐
     ['pointerdown', 'touchend', 'click', 'keydown'].forEach(ev => {
       document.addEventListener(ev, startBgm, { once: false, passive: true });
     });
