@@ -1139,15 +1139,17 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
     }
+    /* 微信内置浏览器等弱环境：降低背景装饰的合成开销 */
+    @media (max-width: 480px) {
+      .bg-ring, .bg-leaf { opacity: .08; }
+    }
   </style>
 </head>
 <body data-theme="tomato">
   <div class="bg-ring ring-1" aria-hidden="true"></div>
   <div class="bg-ring ring-2" aria-hidden="true"></div>
-  <div class="bg-ring ring-3" aria-hidden="true"></div>
   <div class="bg-leaf l1" aria-hidden="true"></div>
   <div class="bg-leaf l2" aria-hidden="true"></div>
-  <div class="bg-leaf l3" aria-hidden="true"></div>
 
   <!-- 开屏：案板切西红柿 -->
   <div id="splash" aria-label="开屏动画">
@@ -1380,11 +1382,7 @@
   </div>
 
   <button type="button" class="bgm-toggle" id="bgmToggle" aria-label="背景音乐开关" aria-pressed="true">♪</button>
-  <audio id="bgm" loop preload="auto" aria-label="背景音乐">
-    <source src="assets/bgm-light.mp3" type="audio/mpeg" />
-    <source src="assets/bgm.mp3" type="audio/mpeg" />
-    <source src="assets/bgm.m4a" type="audio/mp4" />
-  </audio>
+  <audio id="bgm" loop preload="auto" src="assets/bgm.mp3" aria-label="背景音乐"></audio>
 
   <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
     <div class="lightbox-card">
@@ -1599,9 +1597,12 @@
       bgmToggle.textContent = playing ? '♪' : '✕';
     }
     bgmToggle.addEventListener('click', e => { e.stopPropagation(); toggleBgm(); });
-    // 音频加载/出错兜底
+    // 音频加载/出错兜底；播放中断（缓冲不足）时尝试续播
     bgm.addEventListener('canplay', refreshBgmButton);
     bgm.addEventListener('error', () => { bgmToggle.style.opacity = '.6'; });
+    bgm.addEventListener('stalled', () => { if (!bgm.paused) bgm.play().catch(() => {}); });
+    bgm.addEventListener('waiting', () => { if (!bgm.paused) bgm.play().catch(() => {}); });
+    bgm.addEventListener('ended', () => { bgm.currentTime = 0; bgm.play().catch(() => {}); });
 
     /* ============ 开屏切番茄交互 ============ */
     const splash = document.getElementById('splash');
