@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff3f1" />
   <title>洋柿子之食用指南</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='24' fill='%23e8443a'/%3E%3Cpath d='M32 14l-6 8 6-3 6 3z' fill='%233f9d55'/%3E%3C/svg%3E" />
   <style>
@@ -175,7 +176,7 @@
       background: var(--cream);
       transition: opacity .55s ease, visibility .55s ease;
     }
-    #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+    #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; display: none; }
     .splash-inner { text-align: center; }
 
     .board-scene {
@@ -453,10 +454,11 @@
       opacity: 0;
       transform: translateY(24px) scale(.98);
       pointer-events: none;
-      transition: opacity .34s ease, transform .34s ease;
+      transition: opacity .25s ease, transform .25s ease;
       scrollbar-width: thin;
       scrollbar-color: var(--butter) transparent;
-      will-change: opacity, transform;
+      /* 未激活卡片脱离渲染树，不参与布局与绘制 */
+      display: none;
     }
     /* 卡片顶部番茄蒂装饰条 */
     .card::before {
@@ -471,6 +473,7 @@
       opacity: .55;
     }
     .card.active {
+      display: block;
       opacity: 1;
       transform: translateY(0) scale(1);
       pointer-events: auto;
