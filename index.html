@@ -1380,7 +1380,10 @@
   </div>
 
   <button type="button" class="bgm-toggle" id="bgmToggle" aria-label="背景音乐开关" aria-pressed="true">♪</button>
-  <audio id="bgm" loop preload="auto" src="assets/bgm.m4a" aria-label="背景音乐"></audio>
+  <audio id="bgm" loop preload="auto" aria-label="背景音乐">
+    <source src="assets/bgm.mp3" type="audio/mpeg" />
+    <source src="assets/bgm.m4a" type="audio/mp4" />
+  </audio>
 
   <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
     <div class="lightbox-card">
@@ -1566,7 +1569,12 @@
       if (bgmStarted) return;
       bgmStarted = true;
       bgm.volume = .72;
-      bgm.play().catch(() => { bgmToggle.style.display = 'none'; });
+      bgm.currentTime = 0;
+      const p = bgm.play();
+      if (p && p.catch) p.catch(() => {
+        // 自动播放被拦时保留按钮，用户再点一次即可播放
+        refreshBgmButton();
+      });
       refreshBgmButton();
     }
     function toggleBgm() {
@@ -1595,7 +1603,7 @@
     const board = document.getElementById('board');
     let sliced = false;
     // 开屏任意一次点击/触摸即作为用户手势，启动循环背景音乐
-    ['pointerdown', 'keydown'].forEach(ev => {
+    ['pointerdown', 'touchend', 'click', 'keydown'].forEach(ev => {
       document.addEventListener(ev, startBgm, { once: false, passive: true });
     });
     function tapTomato() {
