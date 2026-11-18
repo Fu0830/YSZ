@@ -158,48 +158,12 @@
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 14% 12%, var(--bg-a) 0 90px, transparent 91px),
-        radial-gradient(circle at 86% 24%, var(--bg-b) 0 70px, transparent 71px),
-        radial-gradient(circle at 24% 88%, var(--bg-c) 0 110px, transparent 111px),
-        var(--bg-grad);
+      background: var(--bg-grad);
       overflow: hidden;
       transition: background .4s ease, color .4s ease;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .16;
-      background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
-      background-size: 24px 24px;
-      mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
-    }
 
-    .bg-ring {
-      position: fixed;
-      border: 1px solid color-mix(in srgb, var(--yolk) 22%, transparent);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .ring-1 { width: 220px; height: 220px; left: -80px; top: 80px; }
-    .ring-2 { width: 160px; height: 160px; right: -54px; bottom: 110px; }
-    .ring-3 { width: 90px; height: 90px; right: 34px; top: 64px; }
-
-    /* 背景番茄叶装饰 */
-    .bg-leaf {
-      position: fixed;
-      width: 46px;
-      height: 30px;
-      background: var(--leaf-decor, #3f9d55);
-      opacity: .12;
-      border-radius: 0 80% 0 80%;
-      pointer-events: none;
-    }
-    .bg-leaf.l1 { left: 22px; bottom: 90px; transform: rotate(-30deg); }
-    .bg-leaf.l2 { right: 30px; top: 120px; transform: rotate(150deg); }
-    .bg-leaf.l3 { left: 30px; top: 150px; transform: rotate(40deg); width: 34px; height: 22px; }
+    /* 背景装饰已精简，窄屏不再叠加额外装饰层 */
 
     /* ============ 开屏：案板切西红柿交互 ============ */
     #splash {
@@ -238,7 +202,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(90deg, rgba(120,72,24,.10) 0 2px, transparent 2px 26px);
+      background: rgba(120, 72, 24, .06);
     }
     /* 案板上的汁水洼，让两半番茄有落脚感 */
     .board-juice {
@@ -481,9 +445,9 @@
       inset: 0;
       padding: 26px 24px 120px;
       border-radius: var(--radius);
-      background: rgba(255, 253, 252, .92);
+      background: var(--eggwhite);
       box-shadow: var(--shadow);
-      border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+      border: 1px solid var(--line);
       overflow-y: auto;
       overscroll-behavior: contain;
       opacity: 0;
@@ -492,6 +456,7 @@
       transition: opacity .34s ease, transform .34s ease;
       scrollbar-width: thin;
       scrollbar-color: var(--butter) transparent;
+      will-change: opacity, transform;
     }
     /* 卡片顶部番茄蒂装饰条 */
     .card::before {
@@ -546,7 +511,7 @@
       bottom: 74px;
       display: flex;
       justify-content: space-between;
-      color: color-mix(in srgb, var(--ink-soft) 70%, #fff);
+      color: var(--ink-soft);
       font-size: 12px;
       letter-spacing: .14em;
       pointer-events: none;
@@ -779,7 +744,6 @@
       border: 1px solid var(--line);
       border-radius: 26px;
       background: var(--eggwhite);
-      box-shadow: 0 10px 22px rgba(120, 20, 14, .12);
       padding: 14px 14px 16px;
     }
     .album-group-head {
@@ -816,7 +780,6 @@
       width: 100%;
       border-radius: 20px;
       border: 1px solid var(--line);
-      box-shadow: 0 10px 22px rgba(120, 20, 14, .14);
       object-fit: contain;
       background: var(--cream-2);
       cursor: zoom-in;
@@ -829,8 +792,7 @@
       align-items: center;
       justify-content: center;
       padding: 24px;
-      background: rgba(60, 20, 18, .72);
-      backdrop-filter: blur(8px);
+      background: rgba(60, 20, 18, .82);
     }
     .photo-lightbox.open { display: flex; }
     .lightbox-card {
@@ -931,7 +893,7 @@
       height: 10px;
       padding: 0;
       border-radius: 999px;
-      background: color-mix(in srgb, var(--yolk) 35%, #fff);
+      background: var(--butter);
       box-shadow: none;
       position: relative;
       transition: transform .18s ease, background .18s ease;
@@ -1139,18 +1101,14 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
     }
-    /* 微信内置浏览器等弱环境：降低背景装饰的合成开销 */
+    /* 弱机/微信 WebView：卡片阴影降级，减少大面积阴影重绘 */
     @media (max-width: 480px) {
-      .bg-ring, .bg-leaf { opacity: .08; }
+      .card { box-shadow: 0 8px 20px rgba(184, 40, 32, .10); }
+      .info-row, .habit, .benefit, .notice, .bonus-note, .benefit-bubble { box-shadow: none; }
     }
   </style>
 </head>
 <body data-theme="tomato">
-  <div class="bg-ring ring-1" aria-hidden="true"></div>
-  <div class="bg-ring ring-2" aria-hidden="true"></div>
-  <div class="bg-leaf l1" aria-hidden="true"></div>
-  <div class="bg-leaf l2" aria-hidden="true"></div>
-
   <!-- 开屏：案板切西红柿 -->
   <div id="splash" aria-label="开屏动画">
     <div class="splash-inner">
