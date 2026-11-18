@@ -1380,7 +1380,7 @@
   </div>
 
   <button type="button" class="bgm-toggle" id="bgmToggle" aria-label="背景音乐开关" aria-pressed="true">♪</button>
-  <audio id="bgm" loop preload="none" aria-label="背景音乐"></audio>
+  <audio id="bgm" loop preload="auto" src="assets/bgm.m4a" aria-label="背景音乐"></audio>
 
   <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
     <div class="lightbox-card">
@@ -1558,12 +1558,11 @@
       if (saved) applyTheme(saved);
     } catch (err) {}
 
-    /* ============ 背景音乐（无音频文件时按钮静默隐藏） ============ */
+    /* ============ 背景音乐：开屏首次交互即循环播放 ============ */
     const bgm = document.getElementById('bgm');
     const bgmToggle = document.getElementById('bgmToggle');
     let bgmStarted = false;
     function startBgm() {
-      if (!bgm.src) { bgmToggle.style.display = 'none'; return; }
       if (bgmStarted) return;
       bgmStarted = true;
       bgm.volume = .72;
@@ -1595,6 +1594,10 @@
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const board = document.getElementById('board');
     let sliced = false;
+    // 开屏任意一次点击/触摸即作为用户手势，启动循环背景音乐
+    ['pointerdown', 'keydown'].forEach(ev => {
+      document.addEventListener(ev, startBgm, { once: false, passive: true });
+    });
     function tapTomato() {
       startBgm();
       if (sliced) { hideSplash(); return; }
